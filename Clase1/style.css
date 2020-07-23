@@ -1,0 +1,39 @@
+header{
+    background-color: black;
+    height: 10vh;
+    text-align: center;
+    color: white;
+}
+h1{
+    font-size: 8vh;
+}
+h1,h2{
+    margin: 0;
+}
+
+main{
+    height: 80vh;
+}
+footer{
+    height: 10vh;
+}
+
+.elemento1{
+    background-color: blue;
+    height: 40px;
+    color: white !important;
+}
+
+
+.elemento2{
+    background-color: greenyellow;
+    height: 40px;
+    color: black !important;
+}
+
+.elemento3{
+    background-color: purple;
+    height: 40px;
+    color: blanchedalmond !important;
+}
+
