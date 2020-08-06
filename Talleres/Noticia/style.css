@@ -1,0 +1,42 @@
+body{
+    background-color: #DCDCDD;
+    color: #46494C;
+    padding: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+h1{
+    font-size: 3.3rem;
+    text-transform:uppercase;
+}
+h2{
+    font-size: 2.8rem;
+    text-transform:uppercase;
+}  
+
+p{
+    font-size: 2.0rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+img{
+    border-radius: 5%;
+    width: 500px;
+    height: 500px;
+    box-shadow: whitesmoke;
+}
+header{
+    margin: auto;
+    text-align: center;
+}
+footer{
+    background-color: #46494C;
+    color: white;
+    text-align: center;
+}
+a{
+
+    color: white;
+}
