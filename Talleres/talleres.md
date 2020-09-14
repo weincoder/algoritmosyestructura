@@ -9,3 +9,6 @@ https://colab.research.google.com/drive/1LsnQCXK-fTOgBpH9vaR77QjEMm0bqWIk?usp=sh
 
 *funciones filter 
 https://colab.research.google.com/drive/1CULz_IdH58i1ezNTT_-_jPMrhxm4Dcxd?usp=sharing
+
+*funciones Reduce 
+https://colab.research.google.com/drive/1A-qTBu0_FlPwOyl73za8gH0UnR9WG4yf?usp=sharing
