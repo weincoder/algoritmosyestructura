@@ -7,3 +7,5 @@ En este espacio veremos los talleres por tema y sus respectivas soluciones
 * Funciones map
 https://colab.research.google.com/drive/1LsnQCXK-fTOgBpH9vaR77QjEMm0bqWIk?usp=sharing
 
+*funciones filter 
+https://colab.research.google.com/drive/1CULz_IdH58i1ezNTT_-_jPMrhxm4Dcxd?usp=sharing
