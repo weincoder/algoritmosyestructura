@@ -1,0 +1,272 @@
+@use postcss-cssnext;
+
+:root {
+  --animation-speed: 0.8s;
+  
+  --sky-color: #CEF3F1; 
+  
+  --sun-left-color: #FFD300;
+  --sun-right-color: #FFEB00;
+  
+  --cloud-line-width: 200px;
+  --cloud-stroke-width: 50px;
+  --cloud-separation: 10px;
+  
+  --mountain-front-color: #A5A991;
+  --mountain-back-color: #6D6F60;
+  --mountain-snow-color: #fff;
+  
+  --tree-left-leaf-color: #00B16A;
+  --tree-right-leaf-color: #3FC380;
+  
+  --ground-color: #9E906E;
+  
+  --grass-color: #2ecc71;
+  
+  --water-color: #00D5E5;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+  /*
+  * Sky
+  * ----
+  */
+
+  #sky {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background: var(--sky-color);
+  }
+
+    #clouds {
+      height: 30%;
+      width: 100%;
+      position: absolute;
+    }
+
+        /* General */
+        #cloud_line, 
+        #cloud_circle {
+          stroke-linecap: round;
+          stroke-width: var(--cloud-stroke-width);
+          stroke: #fff;
+        }
+
+        #cloud #cloud_circle:nth-of-type(2) {
+          transform: translateX(calc(var(--cloud-line-width) + var(--cloud-stroke-width) + var(--cloud-separation)));
+        }
+
+        #cloud #cloud_circle:nth-of-type(3) {
+          transform: translateX(calc(var(--cloud-line-width) + var(--cloud-stroke-width) * 2 + var(--cloud-separation) * 2));
+        }
+
+        /* Specific */
+        #secondClouds {
+          transform: translate(1200px, 350px) scaleY(-1);
+          animation: second-clouds-showing calc(var(--animation-speed) * 7.5) linear 0s 1 both, 
+        }
+
+        @keyframes second-clouds-showing {
+          from, 99% { opacity: 0; }
+          to { opacity: 1; };
+        }
+
+        #cloud1 {
+          animation: cloud1-moving calc(var(--animation-speed) * 36) linear 0s infinite both;
+        }
+
+        @keyframes cloud1-moving {
+          from { transform: translate(1300px, 100px); opacity: 0; }
+          10%, 50%, 90% { opacity: .7; }
+          to { transform: translate(100px, 100px); opacity: 0; };
+        }
+
+        #cloud2 {
+          animation: cloud2-moving calc(var(--animation-speed) * 37) linear 0s infinite both;
+        }
+
+        @keyframes cloud2-moving {
+          from { transform: scale(0.9) translate(1200px, 200px) rotateY(180deg); opacity: 0; }
+          10%, 50%, 90% { opacity: .8; }
+          to { transform: scale(0.9) translate(300px, 200px) rotateY(180deg); opacity: 0; };
+        }
+
+        #cloud3 {
+          animation: cloud3-moving calc(var(--animation-speed) * 38) linear 0s infinite both;
+        }
+
+        @keyframes cloud3-moving {
+          from { transform: scale(0.8) translate(300px, 300px); opacity: 0; }
+          10%, 50%, 90% { opacity: .9; }
+          to { transform: scale(0.8) translate(-200px, 300px); opacity: 0; };
+        }
+
+        #cloud4 {
+          animation: cloud4-moving calc(var(--animation-speed) * 39) linear 0s infinite both;
+        }
+
+        @keyframes cloud4-moving {
+          from { transform: scale(0.7) translate(1100px, 400px) rotateY(180deg); opacity: 0; }
+          10%, 50%, 90% { opacity: 1; }
+          to { transform: scale(0.7) translate(400px, 400px) rotateY(180deg); opacity: 0; };
+        }
+
+    #sun {
+      transform: translate(1100px, 0)
+    }
+
+      #sun-left { fill: var(--sun-left-color); }
+      #sun-right { fill: var(--sun-right-color);; }
+
+  /*
+   * Mountains
+   * ----
+   */
+
+  #mountains {
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 20%;
+  }
+
+    /* General */
+    #mountain {}
+      #mountainRightSide { fill: currentColor; }
+      #mountainLeftSide #mountain-snow  { opacity: 0.8; }
+      #mountain-snow { fill: var(--mountain-snow-color); }
+
+    /* Specific */
+    #backMountains {
+      fill: color(var(--mountain-back-color) l(-5%));
+      color: var(--mountain-back-color);
+      animation: back-mountains-moving calc(var(--animation-speed) * 20) linear 0s infinite both;
+    }
+
+    @keyframes back-mountains-moving {
+      from { transform: translate(0, 20px) scale(.9); }
+      to { transform: translate(-180px, 20px) scale(.9); };
+    }
+
+    #frontMountains {
+      fill: color(var(--mountain-front-color) l(-5%));
+      color: var(--mountain-front-color);
+      animation: front-mountains-moving calc(var(--animation-speed) * 10) linear 0s infinite both;
+    }
+
+    @keyframes front-mountains-moving {
+      from { transform: translateX(-200px); }
+      to { transform: translateX(-400px); };
+    }
+
+      #mountain1 { transform: translateX(-100px); }
+      #mountain2 { transform: translateX(100px); }
+      #mountain3 { transform: translateX(300px); }
+      #mountain4 { transform: translateX(500px); }
+      #mountain5 { transform: translateX(700px); }
+      #mountain6 { transform: translateX(900px); }
+      #mountain7 { transform: translateX(1100px); }
+      #mountain8 { transform: translateX(1300px); }
+      #mountain9 { transform: translateX(1500px); }
+      #mountain10 { transform: translateX(1700px); }
+      #mountain12 { transform: translateX(200px); }
+      #mountain11 { transform: translateX(0px); }
+      #mountain13 { transform: translateX(400px); }
+      #mountain14 { transform: translateX(600px); }
+      #mountain15 { transform: translateX(800px); }
+      #mountain16 { transform: translateX(1000px); }
+      #mountain17 { transform: translateX(1200px); }
+      #mountain18 { transform: translateX(1400px); }
+      #mountain19 { transform: translateX(1600px); }
+      #mountain20 { transform: translateX(1800px); }
+
+  /*
+  * Trees
+  * ----
+  */
+
+  #trees {
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 20%;
+  }
+
+    /* General */
+    #leftLeaf { fill: var(--tree-left-leaf-color); }
+    #rightLeaf { fill: var(--tree-right-leaf-color); }
+    #trunk { stroke: #8F6F40; stroke-width: 20px; }
+
+    /* Specific */
+    #tree1 { transform: translateX(0px); }
+    #tree2 { transform: translateX(50px); }
+    #tree3 { transform: translateX(100px); }
+    #tree4 { transform: translateX(700px); }
+    #tree5 { transform: translateX(1100px); }
+    #tree6 { transform: translateX(1200px); }
+    #tree7 { transform: translateX(1400px); }
+
+    #firstTrees {
+      animation: first-trees-moving calc(var(--animation-speed) * 15) linear 0s infinite both;
+    }
+
+    @keyframes first-trees-moving {
+      from { transform: translateX(2000px); }
+      to { transform: translateX(-1500px); };
+    }
+
+    #secondTrees {
+      animation: second-trees-showing calc(var(--animation-speed) * 7.5) linear 0s 1 both, 
+                 second-trees-moving calc(var(--animation-speed) * 15) linear calc(var(--animation-speed) * 7.5) infinite both;
+    }
+
+    @keyframes second-trees-showing {
+      from, 99% { opacity: 0; }
+      to { opacity: 1; };
+    }
+
+    @keyframes second-trees-moving {
+      from { transform: translateX(2000px); }
+      to { transform: translateX(-1500px); };
+    }
+
+  /*
+   * Ground
+   * ----
+   */
+
+  #ground {
+    width: 100%;
+    height: 18%;
+    position: absolute;
+    bottom: 0;
+    background: var(--ground-color);
+  }
+
+  #grass {
+    position: absolute;
+    bottom: 18%;
+    height: 2%;
+    width: 100%;
+    background: var(--grass-color);
+  }
+
+#water {
+  position: absolute;
+  bottom: 0;
+  height: 14%;
+  width: 100%;
+  background: var(--water-color);
+}

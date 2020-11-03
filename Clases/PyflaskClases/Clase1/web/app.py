@@ -1,4 +1,4 @@
-from flask import Flask, request, make_response, redirect, render_template
+from flask import Flask, request, make_response, redirect, render_template, url_for
 
 # se crea un objeto del tipo app
 app = Flask(__name__)
@@ -10,6 +10,10 @@ def homeRoute():
     response.set_cookie('ip',user_ip)
     response.set_cookie('gato','Lior Herrera')
     return render_template('home.html')
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html')
 
 @app.route('/hello')
 def helloRoute():
