@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for ('static', filename = 'css/home.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">  
+        <svg id="sky">
+          <defs>
+            <g id="sun">
+              <clipPath id="rightSunOff">
+                <rect x="100" y="50" width="100" height="200" />
+              </clipPath>
+              <circle id="sun-left" cx="100" cy="150" r="100" />
+              <circle id="sun-right" cx="100" cy="150" r="100" clip-path="url(#rightSunOff)" />
+            </g>
+          </defs>
+        </svg>
+        <svg id="clouds" viewBox="0 0 1500 300" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <g id="cloud">
+              <line id="cloud_line" x1="0" y1="0" x2="200" y2="0" />
+              <line id="cloud_circle" x1="0" y1="0" x2="0" y2="0" />
+              <line id="cloud_circle" x1="0" y1="0" x2="0" y2="0" />
+            </g>
+          </defs>
+          <use xlink:href="#sun" />
+          <g id="firstClouds">
+            <use xlink:href="#cloud" id="cloud1" />
+            <use xlink:href="#cloud" id="cloud2" />
+            <use xlink:href="#cloud" id="cloud3" />
+            <use xlink:href="#cloud" id="cloud4" />
+          </g>
+          <g id="secondClouds">
+            <use xlink:href="#cloud" id="cloud1" />
+            <use xlink:href="#cloud" id="cloud2" />
+            <use xlink:href="#cloud" id="cloud3" />
+            <use xlink:href="#cloud" id="cloud4" />
+          </g>
+        </svg>
+        <svg id="mountains" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMax meet">
+          <defs>
+            <g id="mountain">
+              <g id="mountainLeftSide">
+                <polygon points="0,200 150,0 150,200" />
+                <polygon id="mountain-snow" points="150,0 150,50 145,30 140,40 135,25 127,30" />
+              </g>
+              <g id="mountainRightSide">
+                <polygon points="150,200 150,0 300,200" />
+                <polygon id="mountain-snow" points="150,0 150,50 155,35 160,45 163,30 173,30" />
+              </g>
+            </g>
+          </defs>
+          <g id="backMountains">
+            <use xlink:href="#mountain" id="mountain1" />
+            <use xlink:href="#mountain" id="mountain2" />
+            <use xlink:href="#mountain" id="mountain3" />
+            <use xlink:href="#mountain" id="mountain4" />
+            <use xlink:href="#mountain" id="mountain5" />
+            <use xlink:href="#mountain" id="mountain6" />
+            <use xlink:href="#mountain" id="mountain7" />
+            <use xlink:href="#mountain" id="mountain8" />
+            <use xlink:href="#mountain" id="mountain9" />
+            <use xlink:href="#mountain" id="mountain10" />
+          </g>
+          <g id="frontMountains">
+            <use xlink:href="#mountain" id="mountain11" />
+            <use xlink:href="#mountain" id="mountain13" />
+            <use xlink:href="#mountain" id="mountain12" />
+            <use xlink:href="#mountain" id="mountain14" />
+            <use xlink:href="#mountain" id="mountain16" />
+            <use xlink:href="#mountain" id="mountain15" />
+            <use xlink:href="#mountain" id="mountain17" />
+            <use xlink:href="#mountain" id="mountain19" />
+            <use xlink:href="#mountain" id="mountain18" />
+            <use xlink:href="#mountain" id="mountain20" />
+          </g>
+        </svg>
+        <svg id="trees" viewBox="0 0 1500 300" preserveAspectRatio="xMidYMax meet">
+          <defs>
+            <g id="tree">
+              <polygon id="leftLeaf" stroke-linejoin="round" points="0,250 50,0 50,250"/>
+              <polygon id="rightLeaf" stroke-linejoin="round" points="50,250 50,0 100,250"/>
+              <line id="trunk" x1="50" y1="250" x2="50" y2="300" />
+            </g>
+            <g id="roundTree">
+              <clipPath id="rightLeafOff">
+                  <rect x="-50" y="0" width="100" height="250" />
+              </clipPath>
+              <circle id="rightLeaf" cx="50" cy="150" r="100" />
+              <circle id="leftLeaf" cx="50" cy="150" r="100" clip-path="url(#rightLeafOff)" /> 
+              <line id="trunk" x1="50" y1="250" x2="50" y2="300" />
+            </g>
+            <g id="treesRow">
+              <use xlink:href="#tree" id="tree1" />
+              <use xlink:href="#tree" id="tree3" />
+              <use xlink:href="#tree" id="tree2" />
+              <use xlink:href="#roundTree" id="tree4" />
+              <use xlink:href="#tree" id="tree5" />
+              <use xlink:href="#tree" id="tree6" />
+              <use xlink:href="#roundTree" id="tree7" />
+            </g>
+          </defs>
+          <use xlink:href="#treesRow" id="firstTrees" />
+          <use xlink:href="#treesRow" id="secondTrees" />
+        </svg>
+        <svg id="grass"></svg>
+        <svg id="ground"></svg>
+        <svg id="water"></svg>
+      </div>
+</body>
+</html>
